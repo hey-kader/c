@@ -2,8 +2,10 @@
 #define LARGE 4 
 
 void read_wav (void);
-void load_chunk_id (int chunk_id[LARGE], int chunk_size, FILE *fp);
+void load_chunk_id (int chunk_id[LARGE],  FILE *fp);
 void print_chunk_id (int chunk_id[LARGE]);
-void load_chunk_size (int chunk_id[LARGE], FILE *fp);
-void to_binary (int s);
-void to_big_endian (int byte); 
+void load_chunk_size (int chunk_size[LARGE], FILE *fp); 
+void print_chunk_size (int chunk_size[LARGE]);
+void make_word (int chunk_size[LARGE]);
+void char_to_byte (char c, int byte[LARGE*2]);
+void print_byte (int byte[LARGE*2]);
