@@ -38,22 +38,25 @@ void print_chunk_size (int chunk_size[LARGE]) {
 
    printf("\n");
    // reverse endianness
-   for (int i = 0; i < 4; i++) {
-        printf("%d ", chunk_size[i]);
-   } 
+   make_word(chunk_size);
    printf("\n");
 
 }
 
 void make_word (int chunk_size[LARGE]) {
 
+    int byte[8];
+    for (int i = 0; i < 8; i++) {
+        byte[i] = 0;
+    }
     for (int i = 0; i < LARGE; i++) {
-        print_byte(&chunk_size[i]);
+        char_to_byte(chunk_size[i], &byte[0]);
+        print_byte(&byte[0], chunk_size[i]);
     }
     
 }
 
-void char_to_byte (char c, int byte[8]) {
+void char_to_byte (int c, int byte[8]) {
 
     int i = 0;
     while (c > 0) {
@@ -71,13 +74,14 @@ void char_to_byte (char c, int byte[8]) {
 
 }
 
-void print_byte (int byte[8]) {
+void print_byte (int byte[8], int n) {
 
-    printf("\n");
     for (int i = 0; i < 8; i++) {
         printf("%d",byte[i]);
+        if (i == 3)
+            printf(" ");
     }
-    printf("\n");
+    printf(" --> %d\n", n);
 
 }
 
