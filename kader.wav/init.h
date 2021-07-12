@@ -89,11 +89,10 @@ void load_num_channels (FILE * fp, char * num_channels) {
 }
 
 void load_sample_rate (FILE * fp, char * sample_rate) {
-    unsigned char i = 0;
+    unsigned int i = 0;
     for (i = 0; i < 4; i++) {
         *(sample_rate+i) = fgetc(fp);
     }
-    *(sample_rate+i) = '\0';
 
 }
 
@@ -156,14 +155,14 @@ void load_frames (FILE * fp, char * frames) {
 void print_frames (FILE * fp) {
     int c, d, flag = 0;
     while ((c = fgetc(fp)) != EOF && ((d = fgetc(fp)) != EOF)) {
-        if (flag == 3) {
-            /* printf(" "); */
+        if (flag % 2) {
+            /* printf(" "); */ 
             flag = 0;
         }
         else {
             flag++;
         }
-        /* printf("%x%x", c, d); */
+        /* printf("0x%x0x%x ", c, d); */
     }
 
 }

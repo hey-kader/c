@@ -16,7 +16,7 @@
     char sub_chunk_a_size[5];
     char audio_format[3];
     char num_channels[3]; 
-    char sample_rate[5];
+    char  * sample_rate[5];
     char byte_rate[5];
     char block_align[3];
     char sub_chunk_b_id[5];
