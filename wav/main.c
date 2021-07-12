@@ -22,7 +22,7 @@ void print_chunk_id (int chunk_id[LARGE]) {
 
     printf("\n");
     for (int i = 0; i < LARGE; i++) {
-        printf("%d ", chunk_id[i]);
+        printf("%c ", chunk_id[i]);
     }
     printf("\n");
 }
@@ -61,13 +61,12 @@ void char_to_byte (int c, int byte[8]) {
     int i = 0;
     while (c > 0) {
 
-        if (c % 2 == 0) {
+        if (c % 2 != 0) {
             byte[i] = 1;
         }
         else {
             byte[i] = 0;
         }
-
         i++;
         c /= 2;
     }
@@ -82,7 +81,6 @@ void print_byte (int byte[8], int n) {
             printf(" ");
     }
     printf(" --> %d\n", n);
-
 }
 
 
@@ -103,7 +101,7 @@ void read_wav () {
 
     printf("\n");
     while ((c = fgetc(fp)) != EOF) {
-//        printf("%c", c);
+//      printf("%c", c);
         count++;
     }
     printf("\ncount: %ld\n", count);
