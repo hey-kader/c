@@ -18,6 +18,7 @@ void load_data_label (FILE *, char *);
 void load_data_block_length (FILE *, char *);
 
 void load_frames (FILE *, char *);
+void print_frames (FILE *); 
 
 void load_chunk_id (FILE *fp, char * chunk_id) {
     int i;
@@ -34,9 +35,6 @@ void load_chunk_size (FILE *fp,  char * chunk_size) {
         temp[i] = fgetc(fp); 
     }
 
-    for (int i = 0; i < 4; i++) {
-        printf(" %u ", temp[i]);
-    }
 
 }
 
@@ -73,7 +71,7 @@ void load_audio_format (FILE * fp, char * audio_format) {
     for (i = 0; i < 2; i++) {
         temp[i] = fgetc(fp);
     }
-    printf("\n");
+    i = 0;
     for (i = 0; i < 2; i++) {
         printf("%c ", temp[i]);
     }
@@ -91,11 +89,11 @@ void load_num_channels (FILE * fp, char * num_channels) {
 }
 
 void load_sample_rate (FILE * fp, char * sample_rate) {
-    char i;
+    unsigned char i = 0;
     for (i = 0; i < 4; i++) {
-        sample_rate[i] = fgetc(fp);
+        *(sample_rate+i) = fgetc(fp);
     }
-    sample_rate[i] = '\0';
+    *(sample_rate+i) = '\0';
 
 }
 
@@ -151,8 +149,21 @@ void load_frames (FILE * fp, char * frames) {
        i++;
     }
     frames[i] = '\0';
-    printf ("\nframe count: \t%d", i);
+    printf ("\ncount:%d\t", i);
 
 }
 
+void print_frames (FILE * fp) {
+    int c, d, flag = 0;
+    while ((c = fgetc(fp)) != EOF && ((d = fgetc(fp)) != EOF)) {
+        if (flag == 3) {
+            /* printf(" "); */
+            flag = 0;
+        }
+        else {
+            flag++;
+        }
+        /* printf("%x%x", c, d); */
+    }
 
+}

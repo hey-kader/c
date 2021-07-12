@@ -4,7 +4,7 @@
 
 #include "init.h"
 
-    // 100MB
+// 100MB
 #define MAX 100000000
 
     struct meta {
@@ -55,15 +55,14 @@ int main () {
     load_data_label(fp, kader.metadata.data_label);
     load_data_block_length(fp, kader.metadata.data_block_length);
 
-    printf("\n");
-    printf("chunk id: \t%s\n", kader.metadata.chunk_id);
-    printf("chunk size: \t%d \n", *kader.metadata.chunk_size);
+    printf("\nchunk id:\t%s\n", kader.metadata.chunk_id);
+    printf("chunk size:\t%d\n", *kader.metadata.chunk_size);
     printf("format: \t%s\n", kader.metadata.format);
     printf("sub chunk id: \t%s\n", kader.metadata.sub_chunk_a_id);
     printf("sub chunk size: %d\n", *kader.metadata.sub_chunk_a_size);
     printf("audio format: \t%d \n", *kader.metadata.audio_format);
     printf("channels: \t%d \n", *kader.metadata.num_channels);
-    printf("sample rate: \t%hhd \n", *kader.metadata.sample_rate);
+    printf("sample rate: \t%d \n", *kader.metadata.sample_rate);
     printf("byte rate: \t%d \n", *kader.metadata.byte_rate);
     printf("block align: \t%d \n", *kader.metadata.block_align);
     printf("bits per sample: %d \n", *kader.metadata.bits_per_sample);
@@ -71,8 +70,9 @@ int main () {
     printf("data length:  \t%d \n\n", *kader.metadata.data_block_length); 
     printf("#############\n");
     load_frames (fp, kader.frames);
-    printf("\ndata blog: \t%s", kader.frames); 
+    printf("\ndata block:\t%s", kader.frames); 
     printf("\n#############\n\n");
+    print_frames(fp);
     fclose (fp);
 
     return 0;
