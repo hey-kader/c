@@ -87,7 +87,7 @@ void print_byte (int byte[8], int n) {
 void read_wav () {
 
     FILE * fp = fopen("song.wav", "r");
-    int c;
+    unsigned int c;
     long count = 0;
 
     int chunk_id[LARGE];
