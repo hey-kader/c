@@ -15,22 +15,28 @@ void load_byte_rate (FILE *, char *);
 void load_block_align (FILE *, char *);
 void load_bits_per_sample (FILE *, char *);
 void load_data_label (FILE *, char *);
+void load_data_block_length (FILE *, char *);
+
+void load_frames (FILE *, char *);
 
 void load_chunk_id (FILE *fp, char * chunk_id) {
     int i;
     for (i = 0; i < 4; i++) {
         chunk_id[i] = fgetc(fp); 
     }   
-    chunk_id[i] = '\0';
 
 }
 
 void load_chunk_size (FILE *fp,  char * chunk_size) {
     int i;
+    unsigned int temp[4];
     for (i = 0; i < 4; i++) {
-        chunk_size[i] = fgetc(fp); 
+        temp[i] = fgetc(fp); 
     }
-    chunk_size[i] = '\0';
+
+    for (int i = 0; i < 4; i++) {
+        printf(" %u ", temp[i]);
+    }
 
 }
 
@@ -55,7 +61,7 @@ void load_sub_chunk_a_id (FILE *fp, char * sub_chunk_a_id) {
 void load_sub_chunk_a_size (FILE *fp, char * sub_chunk_a_size) {
     int i;
     for (i = 0; i < 4; i++) {
-        sub_chunk_a_size[i] = fgetc(fp);
+        sub_chunk_a_size[i] = ((int)fgetc(fp));
     }
     sub_chunk_a_size[i] = '\0';
     
@@ -63,24 +69,29 @@ void load_sub_chunk_a_size (FILE *fp, char * sub_chunk_a_size) {
 
 void load_audio_format (FILE * fp, char * audio_format) {
     int i;
+    char temp[5];
     for (i = 0; i < 2; i++) {
-        audio_format[i] = fgetc(fp);
+        temp[i] = fgetc(fp);
     }
-    audio_format[i] = '\0';
+    printf("\n");
+    for (i = 0; i < 2; i++) {
+        printf("%c ", temp[i]);
+    }
+    audio_format[0] = temp[0];
 
 }
 
 void load_num_channels (FILE * fp, char * num_channels) {
     int i;
     for (i = 0; i < 2; i++) {
-        num_channels[i] = fgetc(fp);
+        num_channels[i] = ((int)fgetc(fp));
     }
     num_channels[i] = '\0';
 
 }
 
 void load_sample_rate (FILE * fp, char * sample_rate) {
-    int i;
+    char i;
     for (i = 0; i < 4; i++) {
         sample_rate[i] = fgetc(fp);
     }
@@ -91,7 +102,7 @@ void load_sample_rate (FILE * fp, char * sample_rate) {
 void load_byte_rate (FILE * fp, char * byte_rate) {
     int i;
     for (i = 0; i < 4; i++) {
-        byte_rate[i] = fgetc(fp); 
+        byte_rate[i] = (fgetc(fp)); 
     }
     byte_rate[i] = '\0';
 
@@ -123,6 +134,25 @@ void load_data_label (FILE * fp, char * data_label) {
 
 }
 
+void load_data_block_length (FILE *fp , char * data_block_length) {
 
+    int i;
+    for (int i; i < 4; i++) {
+        data_block_length[i] = fgetc(fp);
+    }
+    
+}
+
+void load_frames (FILE * fp, char * frames) {
+
+    int i = 0; 
+    while ((frames[i] = fgetc(fp)) != EOF) {
+       printf("%c",  *((frames+i))); 
+       i++;
+    }
+    frames[i] = '\0';
+    printf ("\nframe count: \t%d", i);
+
+}
 
 
