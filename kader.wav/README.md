@@ -53,6 +53,6 @@
     * Standard .wav files have a bit depth of 16
         * One sample is made of 2 bytes
     * When ```kader.metadata.num_channels``` is 2, The file is encoded in interleaved stereo
-    * When ```kader.metadata.num_channels``` is `, The file is encoded in mono
+    * When ```kader.metadata.num_channels``` is 1, The file is encoded in mono
 
 ![alt text](https://github.com/pablopenrose/c/blob/master/kader.wav/stack.gif?raw=true")
