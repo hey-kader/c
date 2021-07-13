@@ -1,4 +1,4 @@
-# The ```.kader.wav``` audio codec specification
+# The ```.kader.wav``` file specification
 
 ### A ```.kader.wav``` is a special .wav audio file
 ### A ```kader``` is organized as a ```struct```
