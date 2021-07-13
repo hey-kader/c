@@ -34,7 +34,7 @@
 
 * Things to consider: 
     * The ```kader.metadata``` struct can be treated like a ```JSON``` 
-    * Refer to the "canonical wav format" diagram below when considering the endianness of each member 
+    * Refer to the "canonical wave format" diagram below when considering the endianness of each member 
     * Often times the ```kader.metadata.sub_chunk_a_id``` is a "JUNK" chunk. Thats not a problem! 
 
 ![alt text](https://github.com/pablopenrose/c/blob/master/kader.wav/stack.gif?raw=true")
