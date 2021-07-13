@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <inttypes.h>
 
-#include "init.h"
+#include "init.c"
 
 // 100MB
 #define MAX 100000000
