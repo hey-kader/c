@@ -13,7 +13,7 @@
 
 ## type: ```struct```
 
-## fields: 
+## members: 
 
 #### ```kader.metadata.chunk_id```
 #### ```kader.metadata.chunk_size```
@@ -32,7 +32,9 @@
 #### ```kader.metadata.data_block_length```
 
 
-## The kader.metadata struct cant be thought of as a JSON for pedagogical reasons 
-## (before JSON's were cool)
+* Things to consider: 
+    * The ```kader.metadata``` struct can be treated like a ```JSON``` 
+    * Refer to the "canonical wav format" diagram below when considering the endianness of each member 
+    * Often times the ```kader.metadata.sub_chunk_a_id``` is a "JUNK" chunk. Thats not a problem! 
 
 ![alt text](https://github.com/pablopenrose/c/blob/master/kader.wav/stack.gif?raw=true")
