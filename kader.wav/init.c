@@ -150,3 +150,45 @@ void print_frames (FILE * fp) {
     }
 
 }
+
+void load (void) {
+
+    FILE *fp = fopen ("song.wav", "r"); 
+    
+    load_chunk_id (fp, kader.metadata.chunk_id);
+    load_chunk_size (fp, kader.metadata.chunk_size);
+
+    load_format(fp, kader.metadata.format);
+    load_sub_chunk_a_id(fp, kader.metadata.sub_chunk_a_id);
+    load_sub_chunk_a_size(fp, kader.metadata.sub_chunk_a_size);
+    load_audio_format(fp, kader.metadata.audio_format);
+    load_num_channels(fp, kader.metadata.num_channels);
+    load_sample_rate(fp, kader.metadata.sample_rate);
+    load_byte_rate(fp, kader.metadata.byte_rate);
+    load_block_align(fp, kader.metadata.block_align);
+    load_bits_per_sample(fp, kader.metadata.bits_per_sample);
+    load_data_label(fp, kader.metadata.data_label);
+    load_data_block_length(fp, kader.metadata.data_block_length);
+
+    printf("\nchunk id:\t\t%s\n", kader.metadata.chunk_id);
+    printf("chunk size:\t\t%d\n", *kader.metadata.chunk_size);
+    printf("format: \t\t%s\n", kader.metadata.format);
+    printf("sub chunk id: \t\t%s\n", kader.metadata.sub_chunk_a_id);
+    printf("sub chunk size: \t%d\n", *kader.metadata.sub_chunk_a_size);
+    printf("audio format: \t\t%d \n", *kader.metadata.audio_format);
+    printf("channels: \t\t%d \n", *kader.metadata.num_channels);
+    printf("sample rate: \t\t%d \n", *kader.metadata.sample_rate);
+    printf("byte rate: \t\t%d \n", *kader.metadata.byte_rate);
+    printf("block align: \t\t%d \n", *kader.metadata.block_align);
+    printf("bits per sample: \t%d \n", *kader.metadata.bits_per_sample);
+    printf("data label:  \t\t%s \n", kader.metadata.data_label); 
+    printf("data length:  \t\t%d \n\n", *kader.metadata.data_block_length); 
+    printf("#############\n");
+    load_frames (fp, kader.frames);
+    printf("\ndata block:\t\t%s", kader.frames); 
+    printf("\n#############\n\n");
+    print_frames(fp);
+
+    fclose (fp);
+
+}
