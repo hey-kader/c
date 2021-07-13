@@ -8,7 +8,12 @@
 #### the ```kader``` consists of one ```kader.metadata``` struct 
 #### and one ```kader.frames``` pointer 
 
-## the object ```kader.metadata``` contains the following fields:
+# ```kader.metadata```
+
+## type: ```struct```
+
+### fields: 
+
 
 ## The kader.metadata struct cant be thought of as a JSON for pedagogical reasons 
 ## (before JSON's were cool)
