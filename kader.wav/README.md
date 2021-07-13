@@ -3,7 +3,8 @@
 ### A ```.kader.wav``` is a special .wav audio file
 ### A ```kader``` is organized as a ```struct```
 
-## The ```kader```  consists of two parts 
+## Every ```kader``` is a lossless audio file 
+## A ```.kader.wav``` audio file consists of two parts 
 
 * ```kader.metadata``` of type ```struct```
 * ```kader.frames``` of type ```char *``` 
