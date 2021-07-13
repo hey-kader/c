@@ -5,8 +5,8 @@
 
 ## The ```kader```  consists of two parts 
 
-#### A ```kader.metadata``` of type ```struct```
-#### A ```kader.frames``` of type ```char *``` 
+#### * ```kader.metadata``` of type ```struct```
+#### * ```kader.frames``` of type ```char *``` 
 
 # ```kader.metadata```
 
