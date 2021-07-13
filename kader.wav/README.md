@@ -8,4 +8,4 @@
 
 ## the object ```kader.metadata``` contains the following fields:
 
-![alt text](https://github.com/pablopenrose/tree/master/kader.wav/stack.gif?raw=true")
+![alt text](https://github.com/pablopenrose/c/blob/master/kader.wav/stack.gif?raw=true")
