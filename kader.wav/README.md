@@ -1,4 +1,4 @@
-# The ```.kader.wav``` audio spec in C
+# The ```.kader.wav``` audio codec specification
 
 ### A ```.kader.wav``` is a special .wav audio file
 ### A ```kader``` is organized as a ```struct```
