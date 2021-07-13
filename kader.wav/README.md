@@ -4,7 +4,7 @@
 ### A ```kader``` is organized as a ```struct```
 
 ## Every ```kader``` is a lossless audio file 
-## A ```.kader.wav``` audio file consists of two parts 
+## A ```.kader.wav``` consists of two parts 
 
 * ```kader.metadata``` of type ```struct```
 * ```kader.frames``` of type ```char *``` 
