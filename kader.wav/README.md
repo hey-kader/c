@@ -1,12 +1,12 @@
 # The ```.kader.wav``` audio spec in C
 
-### A ```kader``` is a .wav encoded audio file
-### A ```kader``` is stored in a struct
+### A ```.kader.wav``` is a special .wav audio file
+### A ```kader``` is organized as a ```struct```
 
-## The file consists of two parts 
+## The ```kader```  consists of two parts 
 
-#### the ```kader``` consists of one ```kader.metadata``` struct 
-#### and one ```kader.frames``` pointer 
+#### A ```kader.metadata``` of type ```struct```
+#### A ```kader.frames``` of type ```char *``` 
 
 # ```kader.metadata```
 
