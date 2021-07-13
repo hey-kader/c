@@ -50,7 +50,7 @@
 ##### The bit depth is stored in the metadata, in ```kader.metadata.bits_per_sample```
 
 * Things to consider:
-    * Most songs have a bit depth of 16
+    * Standard .wav files have a bit depth of 16
         * One sample is made of 2 bytes
     * When ```kader.metadata.num_channels``` is 2, The file is encoded in interleaved stereo
     * When ```kader.metadata.num_channels``` is `, The file is encoded in mono
