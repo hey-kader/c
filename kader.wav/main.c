@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "init.c"
+#include "wav.c"
 
 int main () {
 
     load ();
     return 0;
+
 }
